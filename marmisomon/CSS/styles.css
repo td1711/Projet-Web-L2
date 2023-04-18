@@ -1,0 +1,515 @@
+html{
+    min-height: 100%;
+    background-color: #fdf7f7;
+    display: flex;
+    flex-direction: column;
+    overflow-x : hidden;
+
+}
+
+
+header{
+    color: #f0544f;
+    font-size: 35px;
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding : 10px;
+
+}
+
+
+
+header a{
+    text-decoration: none;
+    color : #f0544f;
+}
+
+#create{
+    font-size: 15px;
+
+}
+
+
+#connecte{
+    display : flex;
+    flex-direction: row;
+    gap : 30px;
+}
+
+#menu{
+    display: flex;
+    gap: 40px;
+    padding-left: 5px;
+}
+
+#liens{
+    display : flex;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 5px;
+    /*background-color: white;*/
+    background-color: rgba(146, 249, 255, 0.4);
+}
+
+.lien:hover{
+    color: #fc7c7c;
+}
+
+#loginAdmin{
+    float : right;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    font-family: Verdana, sans-serif;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    background-image: url("../IMG/background.png");
+
+}
+
+#spat{
+    max-height: 25px;
+    max-width: 25px;
+    padding-top: 10px;
+
+}
+#titlelogo{
+    display: flex;
+    padding-left: 5px;
+    gap: -40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    /*background-color: rgba(146, 249, 255, 0.4);*/
+}
+
+#main-title{
+    float: left;
+    padding-right: 5px;
+}
+
+
+#valideimage{
+    max-width: 20px;
+    max-height: 14px;
+}
+
+#form{
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    flex-grow: 1;
+}
+
+#searchbar{
+    width: 450px;
+    border-radius: 15px;
+    padding : 5px;
+}
+
+#barrerecherche{
+    display: flex;
+    align-items: center;
+    /*border: solid #c2c2c2 4px;*/
+    border-radius: 5px;
+}
+
+#valider{
+    background-color: #f0544f;
+    border-radius: 100px;
+    padding : 8px;
+    display : flex;
+    justify-content: center;
+}
+
+#valider:hover{
+    background-color: #f3443e;
+}
+
+
+#Soumettre{
+    min-width: 500px;
+    font-size: 15px;
+}
+
+#form-group{
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#identifiant{
+    min-height: 50px;
+}
+
+#motdepasse{
+    min-height: 50px;
+}
+
+#text-login{
+    font-size: 25px;
+    text-align: center;
+}
+
+
+#bordureconnexion{
+    border : #f0544f 2px solid;
+    margin : 0 auto 0 auto;
+    width : 500px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 228, 196);
+}
+
+#connexion{
+    display: grid;
+    justify-content: center;
+    max-width: 200px;
+    border: solid #c2c2c2 5px;
+    border-radius: 5px;
+
+}
+
+.create{
+    display: grid;
+    justify-content: center;
+    color: #f0544f;
+}
+
+#nvxrecette{
+    display: grid;
+    justify-content: center;
+    color: #f0544f;
+}
+
+footer{
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    background-color: #ffbaba;
+    min-width: 100%;
+}
+
+
+#searchbar{
+    width : 450px;
+    height : 30px;
+}
+
+.titre{
+    padding : 0px;
+    margin : 0px;
+}
+
+.create input{
+    width : 250px;
+    height : 15px;
+    padding : 5px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    border : solid 1px black;
+    text-align: center;
+}
+
+#image{
+    font-size: initial;
+}
+
+.create .input-group{
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ControleBoutonIngr{
+    display: flex;
+    gap : 20px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#ControleBoutonTag{
+    display: flex;
+    gap : 20px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+#IngredientPlus{
+    background-color : dodgerblue;
+    border-radius: 5px;
+    border : none;
+    color : white;
+    text-align : center;
+    width : 22px;
+}
+
+#IngredientMoins{
+    background-color : #ac0000;
+    border-radius: 5px;
+    border : none;
+    color : white;
+    text-align : center;
+    width : 22px;
+}
+
+#TagPlus{
+    background-color : dodgerblue;
+    border-radius: 5px;
+    border : none;
+    color : white;
+    text-align : center;
+    width : 22px;
+}
+
+#TagMoins{
+    background-color : #ac0000;
+    border-radius: 5px;
+    border : none;
+    color : white;
+    text-align : center;
+    width : 22px;
+}
+
+
+#boutons{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#MainForm{
+    order: 2;
+    border : #f0544f 2px solid;
+    margin : 0px auto 0 auto;
+    width : 500px;
+    border-radius: 5px;
+    background-color: rgba(255, 228, 196, 0.4);
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    overflow-y: auto;
+    align-self: flex-end;
+
+}
+
+
+#recetteCree{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    font-size: 30px;
+    color: green;
+}
+
+#error404{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    font-size: 30px;
+    color: red;
+}
+
+
+.recette img{
+    border-radius: 20px 0 0 20px;
+    height : 240px;
+    width : 240px;
+}
+
+.recette{
+    display : flex;
+    width : 100%;
+    height : 240px;
+    background-color: salmon;
+    border-radius : 20px;
+    border:none;
+    color : white;
+}
+
+.titre{
+    margin : 5px 5px 5px 10px;
+}
+
+
+#Resultats-Recette{
+    display : flex;
+    flex-direction : column;
+    height : 100%;
+    width : 100%;
+    margin : 15px 30px 15px 30px;
+    gap : 10px 20px;
+    justify-content : start;
+}
+
+.BoutonsRecette{
+    background-color: #D3D3D3;
+}
+
+.Description-Ing{
+
+}
+
+#main{
+    display: flex;
+    height: auto;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+#Resultats{
+    display: flex;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.lienRecette{
+    margin : 0;
+    width : 80%;
+    text-decoration: none;
+    justify-content : start;
+}
+
+#RecetteComplete{
+    display: flex;
+    flex-direction: column;
+    width : 70%;
+    margin : 20px 10% 10px 10%;
+    background-color: salmon;
+    border-radius: 20px;
+    color : bisque;
+}
+
+#titre{
+    text-align: center;
+    font-size : 3em;
+    padding : 5px;
+}
+
+#IngEtImage{
+    display : flex;
+    justify-content: space-between;
+    margin : 0 5% 0 5%;
+    padding : 5% 0 5% 0;
+}
+
+#Ingredients{
+    display : flex;
+    flex-direction: column;
+}
+
+#image img{
+    width : 200px;
+    height : 200px;
+}
+
+#Tags{
+    margin : 0 5% 0 5%;
+    overflow: hidden;
+    padding : 5% 0 5% 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#Description{
+    margin : 0 5% 0 5%;
+    padding : 5% 0 5% 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recetteTotale{
+    display: flex;
+    justify-content: space-between;
+}
+
+.BoutonsRecette{
+    display: flex;
+    width: 15%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: salmon;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+}
+
+.BoutonsRecette a{
+    display: flex;
+    text-decoration: none;
+    height: 20%;
+}
+
+.Modifier{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: #f0544f;
+    font-weight: bold;
+    box-shadow: 5px 5px 1px #ff443d;
+}
+
+.Modifier:hover{
+    background-color: #98FF98;
+}
+
+
+.Supprimer{
+    display: flex;
+    margin : auto;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: #f0544f;
+    font-weight: bold;
+    box-shadow: 5px 5px 1px #ff443d;
+}
+
+.Supprimer:hover{
+    background-color: #98FF98; /* b9e1ff*/
+}
+
+
+
+
+
+#description.form-control{
+    width: 100%;
+    resize: vertical;
+}
+
+#error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    align-self: start;
+    order: 1;
+    font-size: 25px;
+    color: red;
+    font-weight: bold;
+}
+
+
+#Instruction.form-control{
+    width: 100%;
+    resize: vertical;
+}
