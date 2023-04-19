@@ -35,10 +35,12 @@ class RecetteCreator{
                         Ingredients
                     </label>
                     <?php
+
                     if(sizeof($ingredients) == 0):?>
                         <input class="form-control inputIng" type="text" name="ingredients[]">
                     <?php endif;
-                    foreach($ingredients as $ing):?>
+                    foreach($ingredients as $ing):
+                        ?>
                         <input class="form-control inputIng" type="text" name="ingredients[]" value="<?= $ing->getNom()?>">
                     <?php endforeach;
 
@@ -57,7 +59,7 @@ class RecetteCreator{
                         Tags
                     </label><?php
                     foreach($tags as $tag):
-                        ?><input class="form-control inputIng" type="text" name="tag[]" value="<?= $tag->getNom()?>">
+                        ?><input class="form-control inputIng" type="text" name="tags[]" value="<?= $tag->getNom()?>">
                     <?php endforeach;?>
 
 

@@ -137,15 +137,20 @@ class MarmiDB
         $manquant = array();
 
         foreach($recette -> getIngredients() as $ingredient):
-            if(! $this->testIngredient($ingredient -> nom)){
-                $manquant[] = $ingredient -> getNom();
+            if(! $this->testIngredient($ingredient->getNom())){
+                $manquant[] = $ingredient;
             }
         endforeach;
 
             return $manquant;
     }
 
-
+    function getIdIngredient(string $NomIngredient) : int{
+        $requete = "SELECT id FROM ingredient WHERE nom='".$NomIngredient."'";
+        $results = $this->doRequete($requete);
+        $result = $results[0];
+        return $result->id;
+    }
 
     function addRecette(Recette $recette){
         $PDO = $this->PDO;
@@ -158,15 +163,16 @@ class MarmiDB
         $statement->execute() or die(var_dump($statement -> errorInfo()));
 
 
-        $statement = $this -> PDO -> prepare("SELECT id FROM recette WHERE titre = \"" . $recette -> getTitre() . "\"");
+        $statement = $this -> PDO -> prepare("SELECT * from recette WHERE id=(SELECT max(id) FROM recette)");
         $statement -> execute() or die(var_dump($statement -> errorInfo()));
         $id = $statement -> fetchAll();
+        echo "ID  :: ".$id[0][3]."<br>";
         echo $id[0][0];
 
         $query = "INSERT INTO contientTag(id_recette, id_tag) VALUES (:recette, :tag)";
         $statement = $PDO -> prepare($query);
         foreach ($recette -> getTags() as $tag):
-            $statement->bindValue(':recette', $id[0]);
+            $statement->bindValue(':recette', $id[0][3]);
             $statement->bindValue(':tag', $tag -> getId());
             $statement->execute() or die(var_dump($statement -> errorInfo()));
         endforeach;
@@ -174,8 +180,8 @@ class MarmiDB
         $query = "INSERT INTO contientIngredient(id_recette, id_ingredient) VALUES (:recette, :ingredient)";
         $statement = $PDO -> prepare($query);
         foreach ($recette -> getIngredients() as $ingredient):
-            $statement->bindValue(':recette', $id[0][0]);
-            $statement->bindValue(":ingredient", $ingredient -> getId());
+            $statement->bindValue(':recette', $id[0][3]);
+            $statement->bindValue(":ingredient", $this->getIdIngredient($ingredient->getNom()));
             $statement->execute() or die(var_dump());
         endforeach;
     }

@@ -9,7 +9,8 @@ session_start();
 
 use Marmi\Template;
 
-ob_start();?>
+ob_start();
+?>
 
 <h1>Projet en construction</h1>
 

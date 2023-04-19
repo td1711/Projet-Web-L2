@@ -18,8 +18,8 @@ ob_start();
 if(isset($_POST["name"])){
     $tabIngs = $_POST["ingredients"];
     for($i=0; $i<count($tabIngs); $i++){
-        $tabIngs[$i] = htmlspecialchars($tabIngs[$i]);
-        /*echo $tabIngs[$i]." ";*/
+        $tabIngs[$i] = new Ingredient(htmlspecialchars($tabIngs[$i]),"","",1);
+
     }
 
     //$tabTags = $_POST["tags"];
@@ -43,13 +43,19 @@ else :
 
     $Ingredients = array();
     foreach($tabIngs as $nom){
-        $Ingredients[] = new Ingredient($nom, "","",1);
+        //$Ingredients[] = new Ingredient($nom, "","",1);
+        echo $nom->getNom();
     }
-    $Recette->addIngredients($Ingredients);
+    $Recette->addIngredients($tabIngs);
+
+    $IngsManquants = $MarmiDB->testIngredients($Recette);
+    foreach($IngsManquants as $ing){
+        $MarmiDB->addIngredient($ing);
+    }
+
     $Recette->addTags($tabTags);
 
     $MarmiDB->addRecette($Recette);
-
 
     echo "<span id='recetteCree' >Recette créé avec succès !</span>";
 

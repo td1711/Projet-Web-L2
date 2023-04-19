@@ -16,8 +16,6 @@ $MarmiDB = new \Marmi\MarmiDB();
 ob_start();
 $id = htmlspecialchars($_GET["recette"]);
 if(!isset($_POST["name"])) {
-    echo "là";
-
     $MarmiDB = new \Marmi\MarmiDB();
 
     $recette = $MarmiDB->returnRecette($id);

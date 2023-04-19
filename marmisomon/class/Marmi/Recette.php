@@ -89,7 +89,7 @@ class Recette{
 
         ?>
         <div class="recetteTotale">
-            <a class="lienRecette" href="recette.php?recette=<?= $this->titre?>">
+            <a class="lienRecette" href="recette.php?recette=<?= $this->id?>">
                 <div class="recette">
                     <img src="..<?= DIRECTORY_SEPARATOR."IMG".DIRECTORY_SEPARATOR."Recette".DIRECTORY_SEPARATOR.$this->photo?>">
                     <div class="informations">

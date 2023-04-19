@@ -9,13 +9,15 @@ session_start();
 
 use Marmi\Template;
 
-$recette = htmlspecialchars($_GET["recette"]);
+$IdRecette = htmlspecialchars($_GET["recette"]);
 $MarmiDB = new \Marmi\MarmiDB();
+$recette = $MarmiDB->returnRecette($IdRecette);
+/*
 $ArrayRecettes = $MarmiDB->getAllRecettes($recette);
 foreach($ArrayRecettes as $rec){
     if($rec->getTitre() == $recette)
         $recette = $rec;
-}
+}*/
 ob_start();
 
 
