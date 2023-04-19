@@ -11,7 +11,7 @@ use Marmi\Template;
 
 ob_start();
 
-
+<h1>Projet en construction</h1>
 
 
 $content = ob_get_clean();
