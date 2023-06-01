@@ -16,9 +16,6 @@ class Ingredient{
         $this->id = $id;
     }
 
-    function printNom(){
-        echo $this->nom;
-    }
 
     function getNom(){
         return $this->nom;
@@ -32,7 +29,47 @@ class Ingredient{
         return $this->image;
     }
 
+    function setImage(string $image){
+        $this->image = $image;
+    }
+
     function getSaison(){
         return $this -> saison;
+    }
+
+    function render(){
+
+        ?>
+        <div class="recetteTotale">
+            <a class="lienRecette" href="">
+                <div class="recette">
+                    <img src="..<?= DIRECTORY_SEPARATOR."IMG".DIRECTORY_SEPARATOR."Ingredients".DIRECTORY_SEPARATOR.$this->image?>">
+                    <div class="informations">
+                        <h2 class="titre">
+                            <?php echo $this->nom?>
+                            <?php echo $this->saison?>
+                        </h2>
+                    </div>
+                </div>
+            </a>
+
+            <?php if(isset($_SESSION["login"])):?>
+             <div class="BoutonsRecette">
+                    <a href="modifierIngredient.php?ingredient=<?= $this->id?>">
+                        <button class="Modifier">
+                            Modifier
+                        </button>
+                    </a>
+                    <a href="delete.php?ingredient=<?= $this->id?>">
+                        <button class="Supprimer">
+                            Supprimer
+                        </button>
+                    </a>
+                </div>
+            <?php endif;?>
+
+
+        </div>
+        <?php
     }
 }

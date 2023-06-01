@@ -19,4 +19,20 @@ class Tag{
     {
         return $this->nom;
     }
+
+    public function render():void{?>
+        <div class="tagRender">
+            <h2 class="titreTag">
+                <?php echo $this->nom?>
+            </h2>
+            <?php if(isset($_SESSION["login"])):?>
+                <a href="delete.php?tag=<?= $this->id?>">
+                    <img src="../IMG/delete.svg">
+                </a>
+            <?php endif; ?>
+        </div>
+        <?php
+
+
+    }
 }

@@ -71,7 +71,7 @@ class Recette{
 
     function addIngredients(array $nouveaux){
         foreach($nouveaux as $nv){
-            if(!in_array($nv,$this->Ingredients)){
+            if(!in_array($nv,$this->Ingredients) && $nv->getNom() != ""){
                 $this->Ingredients[] = $nv;
             }
         }
@@ -99,6 +99,7 @@ class Recette{
 
                         <div class="Description-Ing">
                             <div class="ingredients">
+                                <b>Ingrédients :</b>
                                 <?php
                                 foreach($this->Ingredients as $ing):
                                     ?>
@@ -109,13 +110,15 @@ class Recette{
                             </div>
 
                             <div class="description">
+                                <b>Description :</b>
                                 <?php echo $this->description?>
                             </div>
                         </div>
                     </div>
                 </div>
             </a>
-            <?php if(isset($_SESSION["login"])):?>
+            <?php // Affichage des boutons de modification et de suppression si l'utilisateur est connecté
+            if(isset($_SESSION["login"])):?>
             <div class="BoutonsRecette">
                 <a href="modifier.php?recette=<?= $this->id?>">
                     <button class="Modifier">

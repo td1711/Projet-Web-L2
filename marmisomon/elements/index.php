@@ -1,8 +1,6 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 require_once "../class" . DIRECTORY_SEPARATOR . "autoloader.php";
 
 session_start();
@@ -12,8 +10,22 @@ use Marmi\Template;
 ob_start();
 ?>
 
-<h1>Projet en construction</h1>
+<form id="AdvancedSearchForm" method="POST" action="recherche.php">
+    <h2>Recherche avancée</h2>
+    <input class="searchbar" type="text" name="search" placeholder="Je cherche une recette">
 
+    <?php $RecetteCreator = new \Marmi\RecetteCreator();
+    $RecetteCreator->generateIngredientForm(array(),array());
+
+    $RecetteCreator->generateTagsForm(array());
+    ?>
+
+    <button id ="BoutonAvancedSearch" type="submit" name="IsAdvancedSearch" value="true">
+        Rechercher
+    </button>
+
+
+</form>
 <?php
 
 $content = ob_get_clean();

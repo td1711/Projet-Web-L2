@@ -16,10 +16,20 @@ class Template{
         </head>
         <body>
             <?php include "header.php" ?>
-
+            <?php $MarmiDB = new \Marmi\MarmiDB();
+            // Génère la liste des ingrédients présents dans la BDD pour le javascript
+            $listeIngredients = $MarmiDB->returnArrayIngredients();?>
+                <script>let ingredients = [<?php
+                        for($i=0; $i<count($listeIngredients); $i++):
+                            echo '"'.$listeIngredients[$i]->getNom().'"';
+                            if($i < count($listeIngredients)-1)
+                                echo ",";
+                        endfor ?>]
+                </script>
                 <div id="main">
-
-                <?= $content ?>
+                    <div id="content">
+                        <?= $content ?>
+                    </div>
 
                 </div>
 

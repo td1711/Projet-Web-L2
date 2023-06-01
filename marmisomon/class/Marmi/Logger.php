@@ -6,9 +6,9 @@ class Logger{ // Classe Logger du TP2
     public array $tab = array("granted" => true, "nick" => "", "error" => null);
     public function generateLoginForm(string  $action) : void{?>
 
-        <form method="post" action=<?=$action?> id="form">
+        <form method="post" action=<?=$action?> id="form2">
             <div id="bordureconnexion">
-                <form id="connexion" method="post" action=<?=$action?> id="form">
+                <form id="connexion" method="post" action=<?=$action?> id="form2">
                     <div id="text-login">
                         Veuillez vous connecter
                     </div>

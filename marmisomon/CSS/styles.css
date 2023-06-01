@@ -1,12 +1,37 @@
-html{
-    min-height: 100%;
-    background-color: #fdf7f7;
-    display: flex;
-    flex-direction: column;
-    overflow-x : hidden;
+/*------------------------------HTML------------------------------*/
 
+html{
+    height: 100%;
 }
 
+/*------------------------------BODY------------------------------*/
+
+body{
+    margin: 0;
+    display: flex;
+    font-family: Verdana, sans-serif;
+    flex-direction: column;
+    justify-content: space-between;
+    height : 100%;
+    background-image: url("../IMG/background.png");
+    background-color: #43aa8b;
+}
+
+body button:hover, .btn:hover{
+    cursor : pointer;
+}
+
+/*------------------------------HEADER------------------------------*/
+
+#connecte{
+    display : flex;
+    flex-direction: row;
+    gap : 30px;
+}
+
+#create{
+    font-size: 15px;
+}
 
 header{
     color: #f0544f;
@@ -15,32 +40,12 @@ header{
     flex-direction: row;
     justify-content: space-between;
     padding : 10px;
-
+    background-color : salmon;
 }
-
-
 
 header a{
     text-decoration: none;
     color : #f0544f;
-}
-
-#create{
-    font-size: 15px;
-
-}
-
-
-#connecte{
-    display : flex;
-    flex-direction: row;
-    gap : 30px;
-}
-
-#menu{
-    display: flex;
-    gap: 40px;
-    padding-left: 5px;
 }
 
 #liens{
@@ -48,8 +53,7 @@ header a{
     align-items: center;
     border-radius: 10px;
     padding-left: 5px;
-    /*background-color: white;*/
-    background-color: rgba(146, 249, 255, 0.4);
+    background-color: antiquewhite;
 }
 
 .lien:hover{
@@ -62,15 +66,10 @@ header a{
     margin-right: 5px;
 }
 
-body{
-    margin: 0;
+#menu{
     display: flex;
-    font-family: Verdana, sans-serif;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-    background-image: url("../IMG/background.png");
-
+    gap: 40px;
+    padding-left: 5px;
 }
 
 #spat{
@@ -84,19 +83,167 @@ body{
     padding-left: 5px;
     gap: -40px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.6);
-    /*background-color: rgba(146, 249, 255, 0.4);*/
+    background-color: antiquewhite;
 }
 
-#main-title{
-    float: left;
-    padding-right: 5px;
+/*------------------------------MAIN------------------------------*/
+#barrerecherche{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    gap: 10px;
 }
 
+#bloc{
+    display: flex;
+    height : 320px;
+    gap : 5%;
+}
 
-#valideimage{
-    max-width: 20px;
-    max-height: 14px;
+#blocGauche{
+    display: flex;
+    flex-direction: column;
+    gap : 20px;
+    width : 45%;
+}
+
+#bordureconnexion{
+    border : #f0544f 2px solid;
+    display: flex;
+    flex-direction: column;
+    width : 500px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 228, 196);
+}
+
+#boutons{
+    display: flex;
+    justify-content: center;
+}
+
+#Labels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width : 65%;
+    padding-right : 15px;
+}
+
+#connexion{
+    display: grid;
+    justify-content: center;
+    max-width: 200px;
+    border: solid #c2c2c2 5px;
+    border-radius: 5px;
+
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    width : 80%;
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow: auto;
+    opacity : 0.9;
+}
+
+#ControleBoutonIngr{
+    display: flex;
+    gap : 20px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#ControleBoutonIngr div{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border : none;
+    color : white;
+    font-size : 1.5em;
+    width : 30px;
+    height : 30px;
+}
+
+#ControleBoutonTag{
+    display: flex;
+    gap : 20px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+.create{
+    color: #f0544f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap : 20px;
+}
+
+.create input{
+    height : 30px;
+    padding : 5px;
+    font-size : 1.5em;
+    text-align: center;
+}
+
+.create input:focus,textarea:focus{
+    outline : none;
+}
+
+.create input,textarea{
+    background-color : transparent;
+    border : none;
+    border-bottom : black solid 1px;
+}
+
+.Croix{
+    background-color: #c90000;
+    color : white;
+    width : 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+}
+
+#DescriptionIngredients{
+    display: flex;
+    justify-content: space-between;
+    height : 200px;
+}
+
+#DisabledTags{
+    display: flex;
+    width : 100%;
+    height : auto;
+    flex-wrap: wrap;
+    align-items: end;
+    gap : 5px;
+}
+
+#DisabledTags input{
+    width : 80px;
+    border : none;
+    color : black;
+    font-size : 1em;
+}
+
+#DivTags{
+    display: flex;
+    flex-direction: row;
+    gap : 50px;
+}
+
+.error404{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+    font-size: 30px;
+    color: red;
 }
 
 #form{
@@ -108,35 +255,24 @@ body{
     flex-grow: 1;
 }
 
-#searchbar{
-    width: 450px;
-    border-radius: 15px;
-    padding : 5px;
+#FormDesc textarea{
+    font-size : 1.5em;
+    height : 80px;
 }
 
-#barrerecherche{
+#FormTag{
     display: flex;
-    align-items: center;
-    /*border: solid #c2c2c2 4px;*/
-    border-radius: 5px;
+    flex-direction: column;
+    width : 130px;
 }
 
-#valider{
-    background-color: #f0544f;
-    border-radius: 100px;
-    padding : 8px;
+#FormTag input{
+    width : auto;
+}
+
+#FormIngredient{
     display : flex;
-    justify-content: center;
-}
-
-#valider:hover{
-    background-color: #f3443e;
-}
-
-
-#Soumettre{
-    min-width: 500px;
-    font-size: 15px;
+    flex-direction: column;
 }
 
 #form-group{
@@ -150,97 +286,28 @@ body{
     min-height: 50px;
 }
 
-#motdepasse{
-    min-height: 50px;
+.ImageGroup{
+    position : relative;
+    width : 50px;
+    height : 100%;
 }
 
-#text-login{
-    font-size: 25px;
-    text-align: center;
-}
-
-
-#bordureconnexion{
-    border : #f0544f 2px solid;
-    margin : 0 auto 0 auto;
-    width : 500px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: rgb(255, 228, 196);
-}
-
-#connexion{
-    display: grid;
-    justify-content: center;
-    max-width: 200px;
-    border: solid #c2c2c2 5px;
-    border-radius: 5px;
-
-}
-
-.create{
-    display: grid;
-    justify-content: center;
-    color: #f0544f;
-}
-
-#nvxrecette{
-    display: grid;
-    justify-content: center;
-    color: #f0544f;
-}
-
-footer{
+.informations{
+    width : 70%;
     display: flex;
-    height: 30px;
-    justify-content: center;
-    background-color: #ffbaba;
-    min-width: 100%;
-}
-
-
-#searchbar{
-    width : 450px;
-    height : 30px;
-}
-
-.titre{
-    padding : 0px;
-    margin : 0px;
-}
-
-.create input{
-    width : 250px;
-    height : 15px;
-    padding : 5px;
-    border-radius: 5px;
-    font-size: 1.2em;
-    border : solid 1px black;
-    text-align: center;
-}
-
-#image{
-    font-size: initial;
-}
-
-.create .input-group{
-    display : flex;
     flex-direction: column;
-    align-items: center;
+    background-color: white;
+    border-radius: 0 20px 20px 0;
 }
 
-#ControleBoutonIngr{
-    display: flex;
-    gap : 20px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-}
 
-#ControleBoutonTag{
-    display: flex;
-    gap : 20px;
-    margin-top: 2px;
-    margin-bottom: 5px;
+#IngredientMoins{
+    background-color : #ac0000;
+    border-radius: 5px;
+    border : none;
+    color : white;
+    text-align : center;
+    width : 22px;
 }
 
 #IngredientPlus{
@@ -252,55 +319,74 @@ footer{
     width : 22px;
 }
 
-#IngredientMoins{
-    background-color : #ac0000;
-    border-radius: 5px;
-    border : none;
-    color : white;
-    text-align : center;
-    width : 22px;
-}
-
-#TagPlus{
-    background-color : dodgerblue;
-    border-radius: 5px;
-    border : none;
-    color : white;
-    text-align : center;
-    width : 22px;
-}
-
-#TagMoins{
-    background-color : #ac0000;
-    border-radius: 5px;
-    border : none;
-    color : white;
-    text-align : center;
-    width : 22px;
-}
-
-
-#boutons{
+#IngredientsGroup{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
+
+#IngredientsTest{
+    overflow: hidden;
+}
+
+.inputIng{
+}
+
+.input-group{
+    display : flex;
+    flex-direction: column;
+    gap : 10px;
+}
+
+#main{
+    height : 100%;
+    min-height: 85vh;
+    width : 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
 
 #MainForm{
-    order: 2;
-    border : #f0544f 2px solid;
-    margin : 0px auto 0 auto;
-    width : 500px;
-    border-radius: 5px;
-    background-color: rgba(255, 228, 196, 0.4);
-    padding-bottom: 10px;
-    scrollbar-width: thin;
-    overflow-y: auto;
-    align-self: flex-end;
-
+    padding : 15px 50px 15px 50px;
 }
 
+#main-title{
+    float: left;
+    padding-right: 5px;
+}
+
+#motdepasse{
+    min-height: 50px;
+}
+
+#nvxrecette{
+    display: grid;
+    justify-content: center;
+    color: #f0544f;
+}
+
+.recette{
+    display : flex;
+    width : 100%;
+    height : 240px;
+    background-color: salmon;
+    border-radius : 20px;
+    border : solid 1px #D3D3D3;
+    color : black;
+    margin-bottom: 10px;
+}
+
+.recette:hover{
+    transform : scale(1.04);
+    transition-duration: 0.05s;
+}
+
+.recette:not(:hover){
+    transition-duration: 0.05s;
+}
 
 #recetteCree{
     display: flex;
@@ -311,66 +397,131 @@ footer{
     color: green;
 }
 
-#error404{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 0;
-    font-size: 30px;
-    color: red;
-}
-
-
 .recette img{
     border-radius: 20px 0 0 20px;
     height : 240px;
-    width : 240px;
+    width : 30%;
 }
 
-.recette{
-    display : flex;
-    width : 100%;
-    height : 240px;
-    background-color: salmon;
-    border-radius : 20px;
-    border:none;
-    color : white;
-}
-
-.titre{
-    margin : 5px 5px 5px 10px;
-}
-
-
-#Resultats-Recette{
-    display : flex;
-    flex-direction : column;
-    height : 100%;
-    width : 100%;
-    margin : 15px 30px 15px 30px;
-    gap : 10px 20px;
-    justify-content : start;
-}
-
-.BoutonsRecette{
-    background-color: #D3D3D3;
-}
-
-.Description-Ing{
-
-}
-
-#main{
-    display: flex;
-    height: auto;
-    flex-grow: 1;
-    flex-direction: column;
+#reset{
+    background-color: #ac0000;
 }
 
 #Resultats{
     display: flex;
-    min-height: 100%;
+    height: 100%;
     min-width: 100%;
+    flex-direction: column;
+}
+
+
+.Resultats-Categorie{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 30px 15px 30px;
+    gap: 10px 20px;
+    justify-content: start;
+}
+
+.Resultats-Categorie:last-child{
+    padding-bottom : 50px;
+}
+
+#SortSearchForm{
+    margin: 0px 30px 15px 30px;
+}
+
+#BoutonsRecherche{
+    display : flex;
+    gap : 10px;
+}
+
+#SortSearchForm input{
+    background-color : #98FF98;
+    border-radius: 15px;
+    padding : 10px;
+    font-size : 1.1em;
+}
+
+#SortSearchForm input:hover{
+    cursor : pointer;
+}
+
+.searchbar{
+    width: 450px;
+    border-radius: 50px;
+    padding : 5px 5px 5px 20px;
+    height : 30px;
+    font-size : 1.2rem;
+    border : solid 2px #D3D3D3;
+    outline : none;
+}
+
+#Soumettre{
+    min-width: 500px;
+    font-size: 15px;
+}
+
+#submit{
+    background-color: #98FF98;
+    color : black !important;
+    padding : 10px 50px 10px 50px;
+    font-size : 1.4rem;
+    border-radius: 15px;
+}
+
+.tagGroup{
+    display: flex;
+    border : 1px solid #114b6e;
+    border-radius: 10px;
+}
+
+#TagMoins{
+    background-color : #ac0000;
+}
+
+#TagPlus{
+    background-color : dodgerblue;
+}
+
+#text-login{
+    font-size: 25px;
+    text-align: center;
+}
+
+#titleImage{
+    display: flex;
+    justify-content: space-evenly;
+    gap : 60px;
+    align-items: center;
+}
+
+.titre{
+    padding : 0px;
+    margin : 0px;
+    padding-left: 10px;
+    background-color: salmon;
+    border-radius : 0 20px 0px 0;
+    color : white;
+}
+
+
+#valideimage{
+    max-width: 25px;
+    max-height: 25px;
+}
+
+
+#valider{
+    background-color: #f0544f;
+    border-radius: 100px;
+    padding : 8px;
+    display : flex;
+    justify-content: center;
+}
+
+#valider:hover{
+    background-color: #f3413a;
 }
 
 .lienRecette{
@@ -383,6 +534,7 @@ footer{
 #RecetteComplete{
     display: flex;
     flex-direction: column;
+    padding-left: 5%;
     width : 70%;
     margin : 20px 10% 10px 10%;
     background-color: salmon;
@@ -399,7 +551,7 @@ footer{
 #IngEtImage{
     display : flex;
     justify-content: space-between;
-    margin : 0 5% 0 5%;
+    margin : 0 5% 0 0%;
     padding : 5% 0 5% 0;
 }
 
@@ -409,21 +561,55 @@ footer{
 }
 
 #image img{
+    width : 150px;
+    height : 150px;
+}
+
+#image{
+    position : absolute;
+    top : 25px;
+    width : 150px;
+    height : 150px;
+    border-bottom:none;
+    border-radius: 15px;
+    margin-bottom : 10px;
+    opacity: 0;
+}
+
+#ImageImg:hover{
+    cursor : pointer;
+}
+
+#imageRecette img{
     width : 200px;
     height : 200px;
+    border: solid black 1px;
+    border-radius: 15px;
+    font-size: initial;
+}
+
+
+#ImageImg{
+    width : 150px;
+    height : 150px;
+    background-image : url("../IMG/add_image.svg");
+    background-size: cover;
+    background-position: center;
+    border: solid black 1px;
+    border-radius: 15px;
 }
 
 #Tags{
     margin : 0 5% 0 5%;
     overflow: hidden;
-    padding : 5% 0 5% 0;
+    padding : 3% 0 3% 0;
     display: flex;
     flex-wrap: wrap;
 }
 
-#Description{
+.BlocRecette{
     margin : 0 5% 0 5%;
-    padding : 5% 0 5% 0;
+    padding : 3% 0 3% 0;
     display: flex;
     flex-wrap: wrap;
 }
@@ -432,6 +618,7 @@ footer{
     display: flex;
     justify-content: space-between;
 }
+
 
 .BoutonsRecette{
     display: flex;
@@ -443,6 +630,7 @@ footer{
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 20px;
+    margin-bottom: 10px;
 }
 
 .BoutonsRecette a{
@@ -491,7 +679,6 @@ footer{
 
 
 #description.form-control{
-    width: 100%;
     resize: vertical;
 }
 
@@ -510,6 +697,235 @@ footer{
 
 
 #Instruction.form-control{
-    width: 100%;
+    height : 90px;
+    font-size : 1.5em;
     resize: vertical;
+    margin: 0;
+}
+
+
+
+#AdvancedSearchForm{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    border : #f0544f 2px solid;
+    width : 500px;
+    margin: auto;
+    background-color: rgb(255, 228, 196);
+    border-radius: 5px;
+    gap: 5px;
+}
+
+#AdvancedSearchForm h2{
+    margin: 0;
+    text-align: center;
+}
+
+#BoutonAvancedSearch{
+    margin-bottom: 5px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.Tag{
+    display: flex;
+    margin-right: 10px;
+    background-color : #98FF98;
+    border-radius: 5px;
+    border: none;
+    padding : 5px;
+    font-size: 1.1em;
+    cursor : pointer
+}
+
+
+.tagRender{
+    border-radius: 20px;
+    color : white;
+    background-color: salmon;
+    display: flex;
+    align-items: center;
+}
+
+.titreTag{
+    padding : 15px;
+    margin : 0;
+}
+
+.Modifier:hover{
+    transform : scale(1.04);
+    transition-duration: 0.05s;
+}
+
+.Modifier:not(:hover){
+    transition-duration: 0.05s;
+}
+
+.Supprimer:hover{
+    transform : scale(1.04);
+    transition-duration: 0.05s;
+}
+
+.Supprimer:not(:hover){
+    transition-duration: 0.05s;
+}
+
+
+.ingredients{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.Ing img{
+    height : 50px;
+    width : 50px;
+}
+
+
+
+.Description-Ing{
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    gap: 15px;
+}
+
+
+.DivCreationIngredient{
+    display : flex;
+    gap : 10px;
+}
+
+.DivCreationIngredient input{
+    max-height : 22px;
+    width: 250px;
+}
+
+.saison{
+    width : 150px !important;
+}
+
+.ImageForm{
+    display: flex;
+    width:50px;
+    height:40px;
+    position: relative;
+}
+
+#ImageForm{
+    position : relative;
+}
+
+.ImageIng{
+    opacity: 100;
+    width : 100%!important;
+    height : 100% !important;
+    border-radius: 5px;
+    border : black solid 1px;
+}
+
+.imgIng{
+    position: absolute;
+    width : 100%;
+    height : 100%;
+    border : black 1px solid;
+    opacity: 100;
+}
+
+.image:hover{
+    cursor : pointer;
+}
+
+.image{
+    position : absolute;
+    opacity: 0;
+    width : 100%!important;
+    height : 100%!important;
+}
+
+
+
+#createIngredient{
+    color: #f0544f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap : 20px;
+}
+
+#createIngredient input{
+    width : 150px;
+}
+
+.create input{
+    height : 30px;
+    padding : 5px;
+    font-size : 1.5em;
+    text-align: center;
+}
+
+.create input,textarea{
+    background-color : transparent;
+    border : none;
+    border-bottom : black solid 1px;
+}
+
+.create input:focus,textarea:focus{
+    outline : none;
+}
+
+#IngredientForm{
+    padding : 15px 50px 15px 50px;
+    display : flex;
+    justify-content: center;
+
+}
+
+#IngredientForm input{
+    width : 500px;
+}
+
+#IngredientForm #image{
+    top : 0px;
+    width : 100%;
+    height : 100%;
+    padding : 0px;
+    cursor : pointer;
+}
+
+#IngredientForm .ImageForm{
+    width : 150px;
+    height : 150px;
+}
+
+#ImageGroupIng{
+    align-items : center;
+}
+
+#form2{
+    display: flex;
+    justify-content : center;
+    align-items:center;
+    order: 2;
+    height: 100%;
+}
+
+/*------------------------------FOOTER------------------------------*/
+
+footer{
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    background-color: #ff6f59;
+    min-width: 100%;
+    align-items: center;
+}
+
+footer a{
+    color : white;
+    text-decoration: none;
 }

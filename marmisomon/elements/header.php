@@ -10,18 +10,22 @@
 
         <form method="post" action="recherche.php" id="form">
             <div id="barrerecherche"><?php
+                // Si l'utilisateur vient de faire une recherche
+                // on affiche la recherche dans la barre de recherche de la nouvelle page
                 $search = "";
                 if(isset($_POST["search"]))
                     $search = htmlspecialchars($_POST["search"]);
                 ?>
-                <input id="searchbar" type="text" name="search" placeholder="Je cherche une recette" value="<?=$search?>">
-                <button type="submit" id="valider" ><img id="valideimage" src="../IMG/valide.png"></button>
+                <input class="searchbar" type="text" name="search" placeholder="Je cherche une recette" value="<?=$search?>">
+                <input hidden="hidden" name="sort" value="Tout">
+                <button type="submit" id="valider" ><img id="valideimage" src="../IMG/Loupe.png"></button>
             </div>
         </form>
     </div>
 
     <div id="liens">
         <?php
+        // Si l'utilisateur est connecté
         if(isset($_SESSION["login"])):
         ?>
             <div id="connecte">

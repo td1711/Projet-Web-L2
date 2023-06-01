@@ -4,10 +4,11 @@ namespace Marmi;
 
 class IngredientCreator
 {
-    function generateForm($name, $image, $description):void{?>
-        <div id="MainForm">
-            <h1 id="nvxIngredient">Nouveau Ingrédient</h1>
-            <form class = create action="createIngredient.php" method="POST" enctype="multipart/form-data">
+    function generateForm($name, $image, $saison, $action):void{?>
+        <div id="IngredientForm">
+
+            <form class="create" action=<?=$action?> method="POST" enctype="multipart/form-data">
+                <h1 id="nvxIngredient" style="text-align:center">Modifier un ingrédient</h1>
                 <div class="input-group">
                     <label class="label" for="name">
                         Titre
@@ -16,19 +17,22 @@ class IngredientCreator
                 </div>
 
                 <div class="input-group">
-                    <label class="label" for="image">
-                        Image
+                    <label class="label" for="saison">
+                        Saison
                     </label>
-                    <input id="image" class="form-control" type="file" name="image" accept="image/png, image/gif, image/jpeg" value="<?=$image?>">
+                    <input id="saison" class="form-control" name="saison" value="<?=$saison?>">
                 </div>
 
-                <div class="input-group">
-                    <label class="label" for="description">
-                        Description
-                    </label>
-                    <textarea id="description" class="form-control" name="description">
-                        <?=$description?>
-                    </textarea>
+                <div id="ImageGroupIng" class="input-group">
+                    <div class="ImageForm">
+                        <img id="ImageImg" src="..<?= DIRECTORY_SEPARATOR."IMG".DIRECTORY_SEPARATOR
+                        ."Ingredients".DIRECTORY_SEPARATOR.$image?>">
+                        <input id="image" type="file" name="imageIng" accept="image/png, image/gif, image/jpeg">
+                    </div>
+                </div>
+
+                <div id="boutons">
+                    <button id="submit" type="submit">Submit</button>
                 </div>
             </form>
         </div>
@@ -37,14 +41,16 @@ class IngredientCreator
         <?php
     }
 
-    public function verify(string $name, array $image, string $description) : string{
+    public function verify(string $name, array $image, int $id) : string{
         $error = "";
-        if(empty($name))
+        $MarmiDB = new MarmiDB();
+        if($MarmiDB->testIngredient($_POST["name"]) && $id != $MarmiDB->getIdIngredient($name))
+            $error = "Ce nom d'ingrédient existe déjà";
+        else if(empty($name))
             $error = "name is empty";
-        else if(empty($image))
+        else if($image["error"] != 0)
             $error = "image is empty";
-        else if(empty($description))
-            $error = "description is empty";
+
         return $error;
     }
 
